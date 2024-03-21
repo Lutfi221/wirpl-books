@@ -3,7 +3,7 @@ import time
 import numpy as np
 import pandas as pd
 
-from streamlit_store.models.transaction import TransactionModel
+from wirpl_books.models.transaction import TransactionModel
 
 st.set_page_config(page_title="Transactions", page_icon="📈")
 

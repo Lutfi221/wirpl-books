@@ -1,4 +1,4 @@
-from streamlit_store.models.base import Model
+from wirpl_books.models.base import Model
 
 # CREATE TABLE IF NOT EXISTS `customer` (
 #   `id` int(11) NOT NULL DEFAULT 0,

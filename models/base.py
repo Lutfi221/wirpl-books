@@ -1,4 +1,4 @@
-from streamlit_store.db import db_conn
+from wirpl_books.db import db_conn
 
 class Model():
     COLUMN_NAMES = []
