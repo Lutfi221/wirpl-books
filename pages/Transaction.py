@@ -33,5 +33,5 @@ with st.container():
     customer_id = st.number_input("Customer ID", min_value=0, max_value=1000, step=1)
 
     if st.button("Add"):
-        customer_model.insert(total_price, payment_method, created_at, status, customer_id)
+        customer_model.insert(id, total_price, payment_method, created_at, status, customer_id)
         st.success("Transaction added")

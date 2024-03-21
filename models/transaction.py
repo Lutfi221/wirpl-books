@@ -25,8 +25,12 @@ class TransactionModel(Model):
         self.cursor.execute("SELECT * FROM transaction")
         return self.cursor.fetchall()
 
-    def insert(self, total_price, payment_method, created_at, status, customer_id):
-        self.cursor.callproc("spInsertTransaction", (total_price, payment_method, created_at, status, customer_id))
+    def insert(self, id, total_price, payment_method, created_at, status, customer_id):
+        self.cursor.execute(
+            "INSERT INTO transaction (id, total_price, payment_method, created_at, status, customer_id) "
+            + "VALUES (%s, %s, %s, %s, %s, %s)",
+            (id, total_price, payment_method, created_at, status, customer_id),
+        )
         self._conn.commit()
 
     def delete(self, id):
