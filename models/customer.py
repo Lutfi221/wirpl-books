@@ -16,6 +16,10 @@ class CustomerModel(Model):
         self.cursor.execute("SELECT * FROM customer")
         return self.cursor.fetchall()
 
+    def get_by_email(self, email):
+        self.cursor.execute("SELECT * FROM customer WHERE email = %s", (email,))
+        return self.cursor.fetchone()
+
     def insert(self, id, name, address, email, gender):
         self.cursor.execute(
             "INSERT INTO customer (id, name, address, email, gender) VALUES (%s, %s, %s, %s, %s)",

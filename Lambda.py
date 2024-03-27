@@ -26,3 +26,7 @@ st.markdown(
  - **A**isyah Putri Khurin'in	(22/493908/PA/21227)
 """
 )
+
+st.markdown("Silakan tekan tombol di bawah ini untuk menuju ke toko.")
+
+st.page_link("./pages/User-Home.py", label="Customer Home", icon="🏠")

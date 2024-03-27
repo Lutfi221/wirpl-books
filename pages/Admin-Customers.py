@@ -9,9 +9,7 @@ st.set_page_config(page_title="Customers", page_icon="📈")
 
 st.markdown("# Customers")
 st.sidebar.header("Customers")
-st.write(
-    """Manage customers"""
-)
+st.write("""Manage customers""")
 
 customer_model = CustomerModel()
 
