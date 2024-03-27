@@ -7,3 +7,7 @@ Jalankan dengan perintah berikut.
 ```bash
 streamlit run Lambda.py
 ```
+
+# Berkontribusi/Mengirimkan Kode
+
+Jangan push ke master, tetapi buatlah pull request.
