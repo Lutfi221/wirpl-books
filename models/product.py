@@ -18,7 +18,6 @@ from models.base import Model
 #   UNIQUE KEY `id` (`id`)
 # )
 
-
 class ProductModel(Model):
     COLUMN_NAMES = [
         "id",
