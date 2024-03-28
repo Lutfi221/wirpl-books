@@ -23,7 +23,7 @@ with st.container():
 
 with st.container():
     st.write("## Add customer")
-    id = st.slider("ID", min_value=0, max_value=1000, step=1)
+    id = st.number_input("ID_add", min_value=0, max_value=1000, step=1)
     name = st.text_input("Name")
     address = st.text_input("Address")
     email = st.text_input("Email")
@@ -35,7 +35,7 @@ with st.container():
 
 with st.container():
     st.write("## Delete customer")
-    id = st.number_input("ID", min_value=0, max_value=1000, step=1)
+    id = st.number_input("ID_delete", min_value=0, max_value=1000, step=1)
     if st.button("Delete"):
         customer_model.delete(id)
         st.success("Customer deleted")
