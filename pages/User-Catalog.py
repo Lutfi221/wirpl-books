@@ -3,8 +3,8 @@ import time
 import numpy as np
 import pandas as pd
 
-from wirpl_books.models.product import ProductModel
-from wirpl_books.services.user import UserService
+from models.product import ProductModel
+from services.user import UserService
 
 st.set_page_config(page_title="User Catalog", page_icon="📇")
 

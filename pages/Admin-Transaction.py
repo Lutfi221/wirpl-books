@@ -3,7 +3,7 @@ import time
 import numpy as np
 import pandas as pd
 
-from wirpl_books.models.transaction import TransactionModel
+from models.transaction import TransactionModel
 
 st.set_page_config(page_title="Transactions", page_icon="📈")
 

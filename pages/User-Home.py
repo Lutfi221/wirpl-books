@@ -1,6 +1,6 @@
 import streamlit as st
 
-from wirpl_books.services.user import UserService
+from services.user import UserService
 
 st.set_page_config(page_title="User Home", page_icon="📈")
 
