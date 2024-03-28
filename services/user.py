@@ -1,3 +1,4 @@
+from typing import Any
 from wirpl_books.models.customer import CustomerModel
 from streamlit.runtime.state import SessionStateProxy
 
@@ -23,3 +24,13 @@ class UserService:
     @property
     def is_logged_in(self):
         return self.session_state.get("customer") is not None
+
+    @property
+    def products(self) -> list[Any]:
+        if not self.session_state.get("products"):
+            self.session_state.products = []
+        return self.session_state.get("products")
+
+    @products.setter
+    def products(self, products):
+        self.session_state.products = products
