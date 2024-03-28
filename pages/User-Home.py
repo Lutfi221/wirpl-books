@@ -11,7 +11,6 @@ st.markdown("# User Home")
 
 user_service = UserService(st.session_state)
 
-st.write([v for v in st.session_state.values()])
 if user_service.is_logged_in:
     st.markdown(f"Hello {user_service.customer['name']}, welcome to your home page!")
 else:
