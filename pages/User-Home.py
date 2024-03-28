@@ -1,7 +1,4 @@
 import streamlit as st
-import time
-import numpy as np
-import pandas as pd
 
 from wirpl_books.services.user import UserService
 
@@ -11,7 +8,9 @@ st.markdown("# User Home")
 
 user_service = UserService(st.session_state)
 
-if user_service.is_logged_in:
-    st.markdown(f"Hello {user_service.customer['name']}, welcome to your home page!")
-else:
+if not user_service.is_logged_in:
     st.switch_page("./pages/User-Login.py")
+
+st.markdown(f"Hello {user_service.customer['name']}, welcome to your home page!")
+
+st.page_link("./pages/User-Catalog.py", label="Catalog", icon="📚")

@@ -1,7 +1,4 @@
 import streamlit as st
-import time
-import numpy as np
-import pandas as pd
 
 from wirpl_books.models.customer import CustomerModel
 from wirpl_books.services.user import UserService
@@ -16,8 +13,10 @@ customer_model = CustomerModel()
 
 with st.container():
     with st.form(key="login"):
-        email = st.text_input("Email")
-        password = st.text_input("Password", type="password")
+        email = st.text_input("Email", value="mmcmillan1@hhs.gov")
+        password = st.text_input(
+            "Password", type="password", value="mmcmillan1@hhs.gov"
+        )
         submit = st.form_submit_button("Submit")
 
         if submit:
