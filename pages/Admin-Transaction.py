@@ -25,7 +25,7 @@ with st.container():
 
 with st.container():
     st.write("## Add Transaction")
-    id = st.slider("ID", min_value=0, max_value=1000, step=1)
+    id = st.number_input("ID", min_value=0, max_value=1000, step=1)
     total_price = st.text_input("Total Price")
     payment_method = st.text_input("Payment Method")
     created_at = st.text_input("Created At")
