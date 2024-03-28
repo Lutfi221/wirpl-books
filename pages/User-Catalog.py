@@ -37,20 +37,20 @@ COLUMNS = ["Title", "Price", "Cart", "Details"]
 for col, field in zip(st.columns(len(COLUMNS)), COLUMNS):
     col.write(field)
 
-btn_id_count = 0
+i = 0
 for _, row in df_products.iterrows():
     st_cols = st.columns(len(COLUMNS))
     st_cols[0].write(row["title"])
     st_cols[1].write(row["price"])
     st_cols[2].button(
         "Add to Cart",
-        key=f"btn_add2cart_{btn_id_count}",
-        on_click=lambda row: user_service.products.append(row),
-        args=[row],
+        key=f"btn_add2cart_{i}",
+        on_click=lambda i: user_service.products.append(df_products.iloc[i].to_dict()),
+        args=[i],
     )
     if st_cols[3].button(
         "Details",
-        key=f"btn_details_{btn_id_count}",
+        key=f"btn_details_{i}",
         args=[row],
     ):
         detailed_product_name = row["title"]
@@ -58,4 +58,4 @@ for _, row in df_products.iterrows():
     if detailed_product_name == row["title"]:
         st.write(row)
 
-    btn_id_count += 1
+    i += 1
