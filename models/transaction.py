@@ -1,4 +1,4 @@
-from wirpl_books.models.base import Model
+from models.base import Model
 
 
 # CREATE TABLE IF NOT EXISTS `transaction` (

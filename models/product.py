@@ -1,4 +1,4 @@
-from wirpl_books.models.base import Model
+from models.base import Model
 
 # CREATE TABLE IF NOT EXISTS `product` (
 #   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -17,7 +17,6 @@ from wirpl_books.models.base import Model
 #   PRIMARY KEY (`id`),
 #   UNIQUE KEY `id` (`id`)
 # )
-
 
 class ProductModel(Model):
     COLUMN_NAMES = [

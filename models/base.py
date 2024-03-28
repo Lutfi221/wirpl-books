@@ -1,4 +1,4 @@
-from wirpl_books.db import db_conn
+from db import db_conn
 
 
 class Model:

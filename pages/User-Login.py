@@ -1,7 +1,7 @@
 import streamlit as st
 
-from wirpl_books.models.customer import CustomerModel
-from wirpl_books.services.user import UserService
+from models.customer import CustomerModel
+from services.user import UserService
 
 st.set_page_config(page_title="Login", page_icon="📈")
 

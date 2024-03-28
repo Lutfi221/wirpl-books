@@ -1,6 +1,6 @@
 import streamlit as st
 
-from wirpl_books.services.user import UserService
+from services.user import UserService
 
 
 user_service = UserService(st.session_state)

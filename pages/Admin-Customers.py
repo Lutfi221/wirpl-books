@@ -1,9 +1,7 @@
 import streamlit as st
-import time
-import numpy as np
 import pandas as pd
 
-from wirpl_books.models.customer import CustomerModel
+from models.customer import CustomerModel
 
 st.set_page_config(page_title="Customers", page_icon="📈")
 

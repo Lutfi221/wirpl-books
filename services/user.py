@@ -1,5 +1,5 @@
 from typing import Any
-from wirpl_books.models.customer import CustomerModel
+from models.customer import CustomerModel
 from streamlit.runtime.state import SessionStateProxy
 
 
