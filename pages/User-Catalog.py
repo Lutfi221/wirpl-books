@@ -3,6 +3,7 @@ import time
 import numpy as np
 import pandas as pd
 
+from wirpl_books.state import use_state
 from wirpl_books.models.product import ProductModel
 from wirpl_books.services.user import UserService
 
@@ -11,6 +12,7 @@ st.set_page_config(page_title="User Catalog", page_icon="📇")
 st.markdown("# Shopping Catalog")
 
 user_service = UserService(st.session_state)
+product_model = ProductModel()
 
 # Shopping Cart
 st.sidebar.markdown("# Shopping Cart")
@@ -27,8 +29,8 @@ else:
         st.sidebar.write("Checkout not implemented")
 
 
-product_model = ProductModel()
-
+# Products Table
+detailed_product_name = use_state.init(None)
 df_products = pd.DataFrame(product_model.get_all())
 COLUMNS = ["Title", "Price", "Cart", "Details"]
 
@@ -46,12 +48,14 @@ for _, row in df_products.iterrows():
         on_click=lambda row: user_service.products.append(row),
         args=[row],
     )
-    if st_cols[3].toggle(
+    if st_cols[3].button(
         "Details",
         key=f"btn_details_{btn_id_count}",
         args=[row],
     ):
-        st.write(f"Title: {row['title']}")
+        detailed_product_name = row["title"]
+
+    if detailed_product_name == row["title"]:
         st.write(row)
 
     btn_id_count += 1
